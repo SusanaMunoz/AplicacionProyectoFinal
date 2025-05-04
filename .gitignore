@@ -1,0 +1,26 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# Ignorar archivos generados por Android Studio
+.gradle/
+.idea/
+build/
+app/build/
+*.iml
+local.properties
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db

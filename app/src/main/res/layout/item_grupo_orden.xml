@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header del día -->
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_purple"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- Fecha -->
+            <TextView
+                android:id="@+id/textViewFechaGrupo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fecha"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <!-- Suma de puntos -->
+            <TextView
+                android:id="@+id/textViewSumaPuntos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Puntos: 0.0"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"/>
+
+            <!-- Flecha -->
+            <ImageView
+                android:id="@+id/imageViewFlecha"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float"
+                android:tint="@android:color/white"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Contenedor de órdenes (inicialmente oculto) -->
+        <LinearLayout
+            android:id="@+id/ordenesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

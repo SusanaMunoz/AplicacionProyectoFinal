@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_image"
+    android:padding="16dp">
+
+    <!-- Título de la actividad -->
+    <TextView
+        android:id="@+id/textViewTituloAviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Crear Aviso"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Campo para la descripción del aviso -->
+    <EditText
+        android:id="@+id/editTextDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción del aviso"
+        android:textColor="#FFFFFF"
+        android:inputType="text"/>
+
+    <!-- Botón para guardar el aviso -->
+    <Button
+        android:id="@+id/buttonGuardarAviso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Aviso"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

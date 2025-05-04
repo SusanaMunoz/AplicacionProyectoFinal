@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="greenButton">#4CAF50</color> <!-- Verde -->
+    <color name="blueButton">#2196F3</color> <!-- Azul -->
+    <color name="redButton">#F44336</color> <!-- Rojo -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- Texto blanco -->
+    <color name="green">#4CAF50</color> <!-- Verde -->
+    <color name="blue">#2196F3</color>  <!-- Azul -->
+    <color name="red">#F44336</color>   <!-- Rojo -->
+    <color name="colorChecked">#4CAF50</color> <!-- Verde para estado marcado -->
+    <color name="colorUnchecked">#FF0000</color> <!-- Rojo para estado no marcado -->
+    <color name="colorEliminar">#FF4444</color> <!-- Rojo para el botón eliminar -->
+
+
+</resources>

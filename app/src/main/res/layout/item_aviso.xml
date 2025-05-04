@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@android:color/white"> <!-- Fondo blanco -->
+
+    <!-- Descripción del aviso -->
+    <TextView
+        android:id="@+id/textViewDescripcionAviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aviso: Descripción"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <!-- Fecha del aviso -->
+    <TextView
+        android:id="@+id/textViewFechaAviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha: 01/01/2023"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Estado de cobrado -->
+    <CheckBox
+        android:id="@+id/checkBoxCobradoAviso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cobrado"
+        android:textSize="14sp"
+        android:buttonTint="@color/checkbox_state_colors"/>
+
+    <!-- Botón de eliminar -->
+    <Button
+        android:id="@+id/buttonEliminarAviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

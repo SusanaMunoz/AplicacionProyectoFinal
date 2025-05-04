@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header del mes -->
+        <LinearLayout
+            android:id="@+id/headerLayoutMesTrabajo"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_purple"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textViewMesGrupoTrabajo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mes"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewTotalMes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0€"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/imageViewFlechaMesTrabajo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:tint="@android:color/white"
+                android:src="@android:drawable/arrow_down_float"/>
+        </LinearLayout>
+
+        <!-- Contenedor de trabajos (inicialmente oculto) -->
+        <LinearLayout
+            android:id="@+id/trabajosLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="8dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

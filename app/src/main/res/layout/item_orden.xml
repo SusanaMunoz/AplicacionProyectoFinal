@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@android:color/white"> <!-- Fondo blanco -->
+
+    <!-- Número de TDC -->
+    <TextView
+        android:id="@+id/textViewTDC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TDC: 123456"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <!-- Código de la orden -->
+    <TextView
+        android:id="@+id/textViewCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Código: 747"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Puntos de la orden -->
+    <TextView
+        android:id="@+id/textViewPuntosOrden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puntos: 2.0"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Botón de eliminar -->
+    <Button
+        android:id="@+id/buttonEliminarOrden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
