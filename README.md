@@ -29,6 +29,14 @@ La aplicación permite a los técnicos registrar y gestionar avisos, órdenes de
 - `/gradle`, `gradlew` → Archivos de configuración del proyecto.
 - `build.gradle.kts`, `settings.gradle.kts` → Configuración general.
 
+ ## 📦 Instalación
+
+1. Descarga el archivo APK desde este repositorio (ver carpeta `apk`).
+2. Acéptala en tu dispositivo Android (puede requerir activar la opción "Permitir apps desconocidas").
+3. Abre la app, regístrate con tu correo y contraseña.
+4. ¡Listo! Ya puedes empezar a usar la aplicación.
+
+
 ## 🔗 Enlace del repositorio
 
 [https://github.com/SusanaMunoz/AplicacionProyectoFinal](https://github.com/SusanaMunoz/AplicacionProyectoFinal)
