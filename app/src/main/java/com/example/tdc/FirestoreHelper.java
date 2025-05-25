@@ -4,6 +4,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,14 +26,40 @@ public class FirestoreHelper {
     }
 
     public void guardarOrdenTrabajo(Map<String, Object> values) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user == null) {
+            Log.e("FirestoreHelper", "Usuario no autenticado");
+            return;
+        }
+
+        // Asegurar que el userId está incluido
+        values.put("userId", user.getUid());
+        Log.d("FirestoreHelper", "userId: " + user.getUid());
+
+        // Asegurar campos obligatorios
+        if (!values.containsKey("ordenTrabajo") || !values.containsKey("codigo") || !values.containsKey("puntos")) {
+            Log.e("FirestoreHelper", "Faltan campos obligatorios en los valores");
+            return;
+        }
+
         db.collection("ordenes")
                 .add(values)
-                .addOnSuccessListener(documentReference -> Log.d("FirestoreHelper", "Orden guardada: " + documentReference.getId()))
-                .addOnFailureListener(e -> Log.d("FirestoreHelper", "Error al guardar orden: ", e));
+                .addOnSuccessListener(documentReference -> Log.d("FirestoreHelper", "Orden guardada ID: " + documentReference.getId()))
+                .addOnFailureListener(e -> Log.d("FirestoreHelper", "Error al guardar orden", e));
     }
 
     public void obtenerTodasLasOrdenes(OrdenesCallback callback) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Log.e("FirestoreHelper", "Usuario no autenticado");
+            return;
+        }
+
+        String userId = user.getUid();
+
         db.collection("ordenes")
+                .whereEqualTo("userId", userId) // Filtra por userId
                 .orderBy("fecha", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(task -> {
