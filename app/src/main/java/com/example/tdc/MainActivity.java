@@ -11,9 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.work.ExistingPeriodicWorkPolicy;
-import androidx.work.PeriodicWorkRequest;
-import androidx.work.WorkManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import android.net.Uri;
@@ -24,7 +21,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -164,6 +160,9 @@ public class MainActivity extends AppCompatActivity {
         values.put("puntos", puntos);
         values.put("fecha", fecha);
 
+        // Asegurar que el userId está incluido
+        values.put("userId", FirebaseAuth.getInstance().getCurrentUser().getUid());
+
         firestoreHelper.guardarOrdenTrabajo(values);
 
         editTextOrdenTrabajo.setText("");
@@ -216,17 +215,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void programarTareasPeriodicas() {
-        WorkManager workManager = WorkManager.getInstance(this);
-
-        PeriodicWorkRequest resumenDiarioRequest = new PeriodicWorkRequest.Builder(
-                ResumenDiarioWorker.class, 24, TimeUnit.HOURS)
-                .build();
-        workManager.enqueueUniquePeriodicWork("resumenDiario", ExistingPeriodicWorkPolicy.REPLACE, resumenDiarioRequest);
-
-        PeriodicWorkRequest resumenMensualRequest = new PeriodicWorkRequest.Builder(
-                ResumenMensualWorker.class, 30, TimeUnit.DAYS)
-                .build();
-        workManager.enqueueUniquePeriodicWork("resumenMensual", ExistingPeriodicWorkPolicy.REPLACE, resumenMensualRequest);
+        AlarmUtil.programarAlarmas(this);
     }
 
     private void enviarCorreo(String destinatario, String asunto, String cuerpo) {
