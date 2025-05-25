@@ -49,6 +49,7 @@ public class OrdenesActivity extends AppCompatActivity {
         firestoreHelper.obtenerTodasLasOrdenes(new FirestoreHelper.OrdenesCallback() {
             @Override
             public void onOrdenesLoaded(QuerySnapshot queryDocumentSnapshots) {
+                // Procesar las órdenes cargadas
                 Map<String, Map<String, CardView>> diasPorMes = new HashMap<>();
                 Map<String, Map<String, Double>> sumaPuntosPorDia = new HashMap<>();
                 Map<String, Integer> contadorDiasPorMes = new HashMap<>();
